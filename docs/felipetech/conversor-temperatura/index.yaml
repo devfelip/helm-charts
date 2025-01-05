@@ -1,0 +1,14 @@
+apiVersion: v1
+entries:
+  conversor-temperatura:
+  - apiVersion: v2
+    appVersion: 1.0.0
+    created: "2025-01-05T19:15:40.2821718-03:00"
+    description: A Helm chart for Kubernetes
+    digest: d9d67dc2051bdb02594b321428fd31bd178468b31df5482ec6c743a50f6775fd
+    name: conversor-temperatura
+    type: application
+    urls:
+    - https://devfelip.github.io/helm-charts/felipetech/conversor-temperatura/conversor-temperatura-0.1.0.tgz
+    version: 0.1.0
+generated: "2025-01-05T19:15:40.281118-03:00"
