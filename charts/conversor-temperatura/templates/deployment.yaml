@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ .Release.Name }}-conversor-temperatura-helm
+spec:
+  replicas: {{ .Values.application.replicas }}
+  selector:
+    matchLabels:
+      app: {{ .Release.Name }}-conversor-temperatura-helm
+  template:
+    metadata:
+      labels:
+        app: {{ .Release.Name }}-conversor-temperatura-helm
+    spec:
+      containers:
+      - name: app
+        image: {{ .Values.application.image.name }}:{{ .Values.application.image.tag }}
+        ports:
+        - containerPort: 80
