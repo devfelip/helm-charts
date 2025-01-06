@@ -1,16 +1,16 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: {{ .Release.Name }}-qrcode-generator-helm
+  name: {{ .Release.Name }}-qrcode-generator
 spec:
   replicas: {{ .Values.application.replicas }}
   selector:
     matchLabels:
-      app: {{ .Release.Name }}-qrcode-generator-helm
+      app: {{ .Release.Name }}-qrcode-generator
   template:
     metadata:
       labels:
-        app: {{ .Release.Name }}-qrcode-generator-helm
+        app: {{ .Release.Name }}-qrcode-generator
     spec:
       containers:
       - name: app
