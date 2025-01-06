@@ -3,14 +3,15 @@ Generate QR Codes in a simplified way
 
 ## Installing the Chart
 ```
-helm repo add qrcode-generator https://devfelip.github.io/qrcode-generator/charts
+helm repo add felipetech https://devfelip.github.io/helm-charts/felipetech
 helm repo update
-helm install qrcode qrcode-generator/qrcode-generator --set application.ingress.hosts[0]=qrcode.domain.com
+helm upgrade --install qrcode-generator felipetech/qrcode-generator --set application.ingress.hosts[0]=qrcode.domain.com
 ```
+
 ## Uninstalling the Chart
 
 ```
-helm uninstall qrcode
+helm uninstall qrcode-generator
 ```
 
 ## GitHub Project

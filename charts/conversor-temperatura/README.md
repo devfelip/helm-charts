@@ -7,6 +7,7 @@ helm repo add felipetech https://devfelip.github.io/helm-charts/felipetech
 helm repo update
 helm upgrade --install conversor-temperatura felipetech/conversor-temperatura --set application.ingress.hosts[0]=conversor-temp.domain.com
 ```
+
 ## Uninstalling the Chart
 
 ```
