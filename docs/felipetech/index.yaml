@@ -1,9 +1,20 @@
 apiVersion: v1
 entries:
+  app-db-connection-test:
+  - apiVersion: v2
+    appVersion: 1.0.0
+    created: "2025-01-06T16:14:22.0510882-03:00"
+    description: A Helm chart for Kubernetes
+    digest: d91961959a9d0a528a499a9d5893ef71f7e56d32485a730dff1f9dc269be49c9
+    name: app-db-connection-test
+    type: application
+    urls:
+    - https://devfelip.github.io/helm-charts/felipetech/app-db-connection-test/app-db-connection-test-0.1.0.tgz
+    version: 0.1.0
   conversor-temperatura:
   - apiVersion: v2
     appVersion: 1.0.0
-    created: "2025-01-06T15:27:04.9237041-03:00"
+    created: "2025-01-06T16:14:22.058516-03:00"
     description: A Helm chart for Kubernetes
     digest: 02468402826833db92c587a3a2e4b11b522b0b12b5fb3488467f232ccad662b9
     name: conversor-temperatura
@@ -14,7 +25,7 @@ entries:
   qrcode-generator:
   - apiVersion: v2
     appVersion: 1.0.0
-    created: "2025-01-06T15:27:04.9237041-03:00"
+    created: "2025-01-06T16:14:22.0644125-03:00"
     description: A Helm chart for Kubernetes
     digest: 1382b21ac7c4e136b9065c0ab7bfa531c9cc0147c977f0df378bcb954fc55c8d
     name: qrcode-generator
@@ -22,4 +33,4 @@ entries:
     urls:
     - https://devfelip.github.io/helm-charts/felipetech/qrcode-generator/qrcode-generator-0.1.0.tgz
     version: 0.1.0
-generated: "2025-01-06T15:27:04.9221151-03:00"
+generated: "2025-01-06T16:14:22.0505615-03:00"
