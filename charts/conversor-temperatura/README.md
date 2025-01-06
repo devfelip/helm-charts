@@ -3,9 +3,9 @@ App para converter a temperatura
 
 ## Installing the Chart
 ```
-helm repo add conversor-temp https://devfelip.github.io/qrcode-generator/charts
+helm repo add felipetech https://devfelip.github.io/helm-charts/felipetech
 helm repo update
-helm install conversor-temp qrcode-generator/qrcode-generator --set application.ingress.hosts[0]=conversor-temp.domain.com
+helm upgrade --install conversor-temperatura felipetech/conversor-temperatura --set application.ingress.hosts[0]=conversor-temp.domain.com
 ```
 ## Uninstalling the Chart
 
@@ -14,7 +14,7 @@ helm uninstall conversor-temp
 ```
 
 ## GitHub Project
-https://github.com/devfelip/conversor-temp
+https://github.com/devfelip/conversor-temperatura
 
 
 | Chave | Tipo | Valor Padrão | Descrição |
