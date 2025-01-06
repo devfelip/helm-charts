@@ -1,0 +1,10 @@
+application:
+  replicas: 1
+  image:
+    name: felipecs8/app-db-connection-test
+    tag: v1
+  service:
+    type: ClusterIP
+  ingress:
+    hosts:
+    - db-connection.127.0.0.1.nip.io
