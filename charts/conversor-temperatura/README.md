@@ -9,15 +9,11 @@ helm upgrade --install conversor-temperatura felipetech/conversor-temperatura --
 ```
 
 ## Uninstalling the Chart
-
 ```
 helm uninstall conversor-temperatura
 ```
 
-## GitHub Project
-https://github.com/devfelip/conversor-temperatura
-
-
+## Global Parameters
 | Chave | Tipo | Valor Padrão | Descrição |
 |----------|----------|----------|----------|
 | application.replicas | int | 1 | Número de réplicas do aplicativo. |
@@ -26,3 +22,6 @@ https://github.com/devfelip/conversor-temperatura
 | application.service.type | string | ClusterIP | Tipo de serviço Kubernetes (ClusterIP, NodePort, LoadBalancer). |
 | application.ingress.enabled | bool | true | Habilita o recurso de Ingress. |
 | application.ingress.hosts | array | ["conversor-temp.127.0.0.1.nip.io"] | Lista de hosts para o Ingress. |
+
+## GitHub Project
+https://github.com/devfelip/conversor-temperatura
