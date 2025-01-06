@@ -10,7 +10,7 @@ helm upgrade --install conversor-temperatura felipetech/conversor-temperatura --
 ## Uninstalling the Chart
 
 ```
-helm uninstall conversor-temp
+helm uninstall conversor-temperatura
 ```
 
 ## GitHub Project
