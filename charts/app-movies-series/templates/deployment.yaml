@@ -1,0 +1,66 @@
+# Deployment do PostgreSQL
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: postgre-{{ .Release.Name }}-movies-series
+spec:
+  selector:
+    matchLabels:
+      app: postgre-{{ .Release.Name }}-movies-series
+  template:
+    metadata:
+      labels:
+        app: postgre-{{ .Release.Name }}-movies-series
+    spec:
+      containers:
+        - name: postgre-movies-series
+          image: postgres:14.3
+          ports:
+            - containerPort: 5432
+          envFrom:
+            - configMapRef:
+                name: {{ .Release.Name }}-movies-series-db-config
+          env:
+            - name: POSTGRES_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: postgre-{{ .Release.Name }}-movies-series-secret
+                  key: DB_PASSWORD
+          volumeMounts:
+            - mountPath: "/var/lib/postgresql/data"
+              name: postgres-storage
+      volumes:
+        - name: postgres-storage
+          persistentVolumeClaim:
+            claimName: postgres-pvc
+
+---
+
+# Deployment da aplicação
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ .Release.Name }}-movies-series
+spec:
+  selector:
+    matchLabels:
+      app: {{ .Release.Name }}-movies-series
+  template:
+    metadata:
+      labels:
+        app: {{ .Release.Name }}-movies-series
+    spec:
+      containers:
+      - name: {{ .Release.Name }}-movies-series
+        image: {{ .Values.application.image.name }}:{{ .Values.application.image.tag }}
+        ports:
+          - containerPort: 3000
+        envFrom:
+          - configMapRef:
+              name: {{ .Release.Name }}-movies-series-config
+        env:
+          - name: DB_PASSWORD
+            valueFrom:
+              secretKeyRef:
+                name: postgre-{{ .Release.Name }}-movies-series-secret
+                key: DB_PASSWORD

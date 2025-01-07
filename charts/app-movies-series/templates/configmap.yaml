@@ -1,0 +1,20 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ .Release.Name }}-movies-series-config
+data:
+  DB_USER: "app-movies-series"
+  DB_HOST: "postgre-{{ .Release.Name }}-movies-series-service.{{ .Release.Namespace }}.svc.cluster.local"
+  DB_DATABASE: "app-movies-series"
+  DB_PORT: "5432"
+  PORT: "3000"
+
+---
+
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ .Release.Name }}-movies-series-db-config
+data:
+  POSTGRES_USER: "app-movies-series"
+  POSTGRES_DB: "app-movies-series"

@@ -1,0 +1,4 @@
+Release {{ .Release.Name }} created in namespace {{ .Release.Namespace }}
+
+Database Secret Ganerated:
+kubectl get secret postgre-{{ .Release.Name }}-movies-series-secret -o jsonpath='{.data.DB_PASSWORD}' | base64 -d
