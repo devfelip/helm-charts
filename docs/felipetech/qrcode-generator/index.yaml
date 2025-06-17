@@ -3,12 +3,12 @@ entries:
   qrcode-generator:
   - apiVersion: v2
     appVersion: 1.0.0
-    created: "2025-06-14T23:26:54.346536-03:00"
+    created: "2025-06-17T19:09:58.6468016-03:00"
     description: A Helm chart for Kubernetes
-    digest: cb2ce8ad6b8b55e39e3018d16c0c1a43697d8fe8865c257471d4185c0597e9c8
+    digest: 6bb29465897669f7af64e22cf98fda08d897b0f618d528d1e47fc1c77114f8ad
     name: qrcode-generator
     type: application
     urls:
     - https://devfelip.github.io/helm-charts/felipetech/qrcode-generator/qrcode-generator-0.1.0.tgz
     version: 0.1.0
-generated: "2025-06-14T23:26:54.3460127-03:00"
+generated: "2025-06-17T19:09:58.6462854-03:00"

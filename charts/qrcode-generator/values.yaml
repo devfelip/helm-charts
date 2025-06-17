@@ -11,3 +11,5 @@ application:
     ingressClassName: null
     tls:
       enabled: false
+    sslRedirect:
+      enabled: false
