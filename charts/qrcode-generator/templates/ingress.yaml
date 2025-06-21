@@ -14,11 +14,11 @@ spec:
 
   {{- if .Values.application.ingress.tls.enabled }}
   tls:
-  {{- range .Values.application.ingress.hosts }}
-    - hosts:
-      - {{ . }}
-      secretName: {{ $.Release.Name }}-qrcode-generator-tls
-  {{- end }}
+    - secretName: {{ .Release.Name }}-qrcode-generator-tls
+      hosts:
+      {{- range .Values.application.ingress.hosts }}
+        - {{ . }}
+      {{- end }}
   {{- end }}
   rules:
   {{- range .Values.application.ingress.hosts }}
