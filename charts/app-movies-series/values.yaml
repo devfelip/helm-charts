@@ -7,4 +7,9 @@ application:
     type: ClusterIP
   ingress:
     hosts:
-    - movies.127.0.0.1.nip.io
+      - movies.127.0.0.1.nip.io
+    ingressClassName: null
+    tls:
+      enabled: false
+    sslRedirect:
+      enabled: false

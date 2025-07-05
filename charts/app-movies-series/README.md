@@ -1,4 +1,4 @@
-# Conversor Temperatura
+# App Movies/Series
 App for create list movies and series
 
 ## Installing the Chart
