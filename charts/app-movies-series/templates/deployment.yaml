@@ -21,13 +21,15 @@ spec:
             - configMapRef:
                 name: {{ .Release.Name }}-movies-series-db-config
           env:
+            - name: PGDATA
+              value: /var/lib/postgresql/data/pgdata  
             - name: POSTGRES_PASSWORD
               valueFrom:
                 secretKeyRef:
                   name: postgre-{{ .Release.Name }}-movies-series-secret
                   key: DB_PASSWORD
           volumeMounts:
-            - mountPath: "/var/lib/postgresql/data"
+            - mountPath: "/var/lib/postgresql"
               name: postgres-storage
       volumes:
         - name: postgres-storage
