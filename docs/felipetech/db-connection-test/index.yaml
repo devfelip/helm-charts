@@ -1,14 +1,14 @@
 apiVersion: v1
 entries:
-  app-db-connection-test:
+  db-connection-test:
   - apiVersion: v2
     appVersion: 1.0.0
-    created: "2025-08-12T19:50:22.7792593-03:00"
+    created: "2025-08-12T20:52:12.8593751-03:00"
     description: A Helm chart for Kubernetes
-    digest: d30e5590c39cdba424c957562ab0f49b217e8d33c258e9f5ec6b0b813e926ac5
-    name: app-db-connection-test
+    digest: c4120667e4b518928fc5dc1164b6b9a102207820e66f8439ad9890d415d20f86
+    name: db-connection-test
     type: application
     urls:
-    - https://devfelip.github.io/helm-charts/felipetech/app-db-connection-test/app-db-connection-test-0.1.0.tgz
+    - https://devfelip.github.io/helm-charts/felipetech/db-connection-test/db-connection-test-0.1.0.tgz
     version: 0.1.0
-generated: "2025-08-12T19:50:22.7787145-03:00"
+generated: "2025-08-12T20:52:12.8588571-03:00"
