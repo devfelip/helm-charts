@@ -8,3 +8,8 @@ application:
   ingress:
     hosts:
     - conversor-temp.127.0.0.1.nip.io
+    ingressClassName: null
+    tls:
+      enabled: false
+    sslRedirect:
+      enabled: false
