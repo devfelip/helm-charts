@@ -3,7 +3,9 @@ kind: Ingress
 metadata:
   name: {{ .Release.Name }}-ingress-movies-series
   annotations:  
-    cert-manager.io/cluster-issuer: "letsencrypt-prod"
+    {{- if .Values.application.ingress.tls.enabled }}
+    cert-manager.io/cluster-issuer: {{ .Values.application.clusterIssuer }}
+    {{- end }}
     {{- if .Values.application.ingress.sslRedirect.enabled }}
     nginx.ingress.kubernetes.io/force-ssl-redirect: "true"
     {{- end }}  
@@ -11,7 +13,6 @@ spec:
   {{- if .Values.application.ingress.ingressClassName }}
   ingressClassName: {{ .Values.application.ingress.ingressClassName }}
   {{- end }}
-
   {{- if .Values.application.ingress.tls.enabled }}
   tls:
     - secretName: {{ .Release.Name }}-movies-series-tls

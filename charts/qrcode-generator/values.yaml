@@ -5,6 +5,7 @@ application:
     tag: v1
   service:
     type: ClusterIP
+  clusterIssuer: "letsencrypt-prod"
   ingress:
     hosts:
     - qrcode.127.0.0.1.nip.io
