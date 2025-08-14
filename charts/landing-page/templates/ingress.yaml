@@ -1,0 +1,36 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: {{ .Release.Name }}-landing-page-ingress
+  annotations:
+    {{- if .Values.application.ingress.tls.enabled }}
+    cert-manager.io/cluster-issuer: {{ .Values.application.clusterIssuer }}
+    {{- end }}
+    {{- if .Values.application.ingress.sslRedirect.enabled }}
+    nginx.ingress.kubernetes.io/force-ssl-redirect: "true"
+    {{- end }}
+spec:
+  {{- if .Values.application.ingress.ingressClassName }}
+  ingressClassName: {{ .Values.application.ingress.ingressClassName }}
+  {{- end }}
+  {{- if .Values.application.ingress.tls.enabled }}
+  tls:
+    - secretName: {{ .Release.Name }}-landing-page-tls
+      hosts:
+      {{- range .Values.application.ingress.hosts }}
+        - {{ . }}
+      {{- end }}
+  {{- end }}
+  rules:
+  {{- range .Values.application.ingress.hosts }}
+    - host: {{ . }}
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: {{ $.Release.Name }}-landing-page
+                port:
+                  number: 80
+  {{- end }}

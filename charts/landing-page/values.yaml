@@ -1,0 +1,16 @@
+application:
+  replicas: 1
+  image:
+    name: felipecs8/landing-page
+    tag: v1
+  service:
+    type: ClusterIP
+  clusterIssuer: "letsencrypt-prod"
+  ingress:
+    hosts:
+    - landing-page.127.0.0.1.nip.io
+    ingressClassName: null
+    tls:
+      enabled: false
+    sslRedirect:
+      enabled: false
