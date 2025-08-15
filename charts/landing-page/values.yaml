@@ -6,6 +6,7 @@ application:
   service:
     type: ClusterIP
   clusterIssuer: "letsencrypt-prod"
+  domainApp: 127.0.0.1.nip.io
   ingress:
     hosts:
     - landing-page.127.0.0.1.nip.io
