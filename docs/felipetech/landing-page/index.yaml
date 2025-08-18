@@ -3,12 +3,12 @@ entries:
   landing-page:
   - apiVersion: v2
     appVersion: 1.0.0
-    created: "2025-08-14T21:28:27.5346497-03:00"
+    created: "2025-08-18T13:35:28.866988-03:00"
     description: A Helm chart for Kubernetes
-    digest: 3524a99c91e34b4833ccac2cdfd38e5c80a1ba7edc3efb82d6688a069c3a0abb
+    digest: 3015733eba578e16b65538aedac509641ff6ff909d09877dc5aff6af0011b14b
     name: landing-page
     type: application
     urls:
     - https://devfelip.github.io/helm-charts/felipetech/landing-page/landing-page-0.1.0.tgz
     version: 0.1.0
-generated: "2025-08-14T21:28:27.5341203-03:00"
+generated: "2025-08-18T13:35:28.866988-03:00"
